@@ -1,0 +1,112 @@
+import { ExternalLink, Rocket } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import basseraImage from '@/assets/project-bassera.jpg';
+
+const ProjectsSection = () => {
+  const projects = [
+    {
+      title: 'Bassera Bookstore',
+      subtitle: 'Digital Retail Startup',
+      description: 'End-to-end online business: branding, marketing, system design, and customer retention strategy. A live case study in building profitable digital commerce from zero.',
+      image: basseraImage,
+      tags: ['E-commerce', 'Marketing', 'Strategy'],
+      link: '#',
+      status: 'Live',
+    },
+    {
+      title: 'Smart Business Dashboard',
+      subtitle: 'Analytics Platform',
+      description: 'Comprehensive dashboard for tracking KPIs, customer behavior, and sales performance across digital channels.',
+      tags: ['Analytics', 'Data Viz', 'Business Intelligence'],
+      status: 'Coming Soon',
+    },
+    {
+      title: 'E-Commerce Optimization Case Study',
+      subtitle: 'Growth Strategy',
+      description: 'Complete optimization framework: conversion rate improvement, customer journey mapping, and retention systems.',
+      tags: ['CRO', 'UX', 'Growth'],
+      status: 'Coming Soon',
+    },
+  ];
+
+  return (
+    <section id="projects" className="py-24">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gradient-primary">
+          Featured Projects
+        </h2>
+        <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+          Real businesses, real results — from concept to execution
+        </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className="overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 animate-scale-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
+              {project.image ? (
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {project.status === 'Live' && (
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full">
+                      {project.status}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="relative h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                  <Rocket className="h-16 w-16 text-muted-foreground/20" />
+                  {project.status === 'Coming Soon' && (
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full">
+                      {project.status}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                <p className="text-sm text-accent font-semibold mb-3">{project.subtitle}</p>
+                <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-2 py-1 bg-secondary text-xs font-medium rounded-md"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {project.link && project.status === 'Live' && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full group"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
+                    View Project
+                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                )}
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsSection;
