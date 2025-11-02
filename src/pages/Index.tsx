@@ -4,10 +4,10 @@ import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import LovableSection from '@/components/LovableSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const Index = () => {
   return (
@@ -19,11 +19,11 @@ const Index = () => {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
-        <LovableSection />
         <ReviewsSection />
         <ContactSection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

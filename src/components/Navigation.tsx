@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, Moon, Sun, Languages } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,14 +23,13 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { href: '#home', label: 'Home', labelAr: 'الرئيسية' },
-    { href: '#about', label: 'About', labelAr: 'عني' },
-    { href: '#skills', label: 'Skills', labelAr: 'المهارات' },
-    { href: '#experience', label: 'Experience', labelAr: 'الخبرة' },
-    { href: '#projects', label: 'Projects', labelAr: 'المشاريع' },
-    { href: '#lovable', label: 'Lovable', labelAr: 'لوفابل' },
-    { href: '#reviews', label: 'Reviews', labelAr: 'التقييمات' },
-    { href: '#contact', label: 'Contact', labelAr: 'اتصل' },
+    { href: '#home', en: 'Home', ar: 'الرئيسية' },
+    { href: '#about', en: 'About', ar: 'عني' },
+    { href: '#skills', en: 'Skills', ar: 'المهارات' },
+    { href: '#experience', en: 'Experience', ar: 'الخبرة' },
+    { href: '#projects', en: 'Projects', ar: 'المشاريع' },
+    { href: '#reviews', en: 'Reviews', ar: 'التقييمات' },
+    { href: '#contact', en: 'Contact', ar: 'اتصل' },
   ];
 
   return (
@@ -51,14 +52,22 @@ const Navigation = () => {
                 href={link.href}
                 className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-medium"
               >
-                {link.label}
+                {t(link.en, link.ar)}
               </a>
             ))}
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleTheme}
+              onClick={toggleLanguage}
               className="ml-2"
+              title={t('Switch to Arabic', 'التبديل إلى الإنجليزية')}
+            >
+              <Languages className="h-5 w-5" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
             >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -66,6 +75,14 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleLanguage}
+              title={t('Switch to Arabic', 'التبديل إلى الإنجليزية')}
+            >
+              <Languages className="h-5 w-5" />
+            </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -93,7 +110,7 @@ const Navigation = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               >
-                {link.label}
+                {t(link.en, link.ar)}
               </a>
             ))}
           </div>

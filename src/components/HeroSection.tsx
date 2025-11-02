@@ -1,8 +1,11 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroProfile from '@/assets/hero-profile.jpg';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background Gradient */}
@@ -17,7 +20,7 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-6 animate-slide-in-left">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
-              🇵🇸 Business & Marketing Specialist
+              🇵🇸 {t('Business & Marketing Specialist', 'أخصائي أعمال وتسويق')}
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -25,15 +28,11 @@ const HeroSection = () => {
             </h1>
             
             <h2 className="text-2xl md:text-3xl text-foreground/80 font-semibold">
-              Helping Entrepreneurs Build Profitable Online Businesses
+              {t('Helping Entrepreneurs Build Profitable Online Businesses', 'مساعدة رواد الأعمال في بناء أعمال مربحة عبر الإنترنت')}
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              From idea to sales and beyond — I help you build systems that work.
-            </p>
-            
-            <p className="text-lg font-cairo text-muted-foreground leading-relaxed" dir="rtl">
-              بساعدك تبني وتؤسس تواجدك على السوشيال ميديا خطوة بخطوة — من أول الفكرة لحد البيع وخدمة ما بعد البيع.
+              {t('From idea to sales and beyond — I help you build systems that work.', 'من الفكرة إلى المبيعات وما بعدها — أساعدك في بناء أنظمة تعمل.')}
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -42,7 +41,7 @@ const HeroSection = () => {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground group"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Start Your Growth Journey
+                {t('Start Your Growth Journey', 'ابدأ رحلة نموك')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
@@ -53,7 +52,7 @@ const HeroSection = () => {
                 onClick={() => window.open('https://wa.me/201111245487', '_blank')}
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
-                WhatsApp Me
+                {t('WhatsApp Me', 'تواصل معي')}
               </Button>
             </div>
           </div>

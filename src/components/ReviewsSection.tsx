@@ -1,33 +1,63 @@
 import { useEffect, useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const ReviewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useLanguage();
 
   const reviews = [
     {
-      name: 'Ahmed Hassan',
-      role: 'E-commerce Founder',
-      text: 'Ali helped us turn marketing chaos into a clear system. Our sales doubled in 3 months.',
+      en: {
+        name: 'Ahmed Hassan',
+        role: 'E-commerce Founder',
+        text: 'Ali helped us turn marketing chaos into a clear system. Our sales doubled in 3 months.',
+      },
+      ar: {
+        name: 'أحمد حسن',
+        role: 'مؤسس متجر إلكتروني',
+        text: 'ساعدنا علي على تحويل فوضى التسويق إلى نظام واضح. تضاعفت مبيعاتنا في 3 أشهر.',
+      },
       rating: 5,
     },
     {
-      name: 'Sara Mohamed',
-      role: 'Digital Entrepreneur',
-      text: 'Smart, practical, and structured — exactly what entrepreneurs need. No fluff, just results.',
+      en: {
+        name: 'Sara Mohamed',
+        role: 'Digital Entrepreneur',
+        text: 'Smart, practical, and structured — exactly what entrepreneurs need. No fluff, just results.',
+      },
+      ar: {
+        name: 'سارة محمد',
+        role: 'رائدة أعمال رقمية',
+        text: 'ذكي، عملي، ومنظم — بالضبط ما يحتاجه رواد الأعمال. لا حشو، فقط نتائج.',
+      },
       rating: 5,
     },
     {
-      name: 'Omar Abdullah',
-      role: 'Startup Owner',
-      text: 'The strategic approach Ali brings is invaluable. He understands both business and technology.',
+      en: {
+        name: 'Omar Abdullah',
+        role: 'Startup Owner',
+        text: 'The strategic approach Ali brings is invaluable. He understands both business and technology.',
+      },
+      ar: {
+        name: 'عمر عبدالله',
+        role: 'صاحب شركة ناشئة',
+        text: 'النهج الاستراتيجي الذي يجلبه علي لا يقدر بثمن. يفهم كلاً من الأعمال والتكنولوجيا.',
+      },
       rating: 5,
     },
     {
-      name: 'Mona Youssef',
-      role: 'Online Business Owner',
-      text: 'Finally, someone who combines marketing knowledge with practical business systems.',
+      en: {
+        name: 'Mona Youssef',
+        role: 'Online Business Owner',
+        text: 'Finally, someone who combines marketing knowledge with practical business systems.',
+      },
+      ar: {
+        name: 'منى يوسف',
+        role: 'صاحبة عمل على الإنترنت',
+        text: 'أخيرًا، شخص يجمع بين معرفة التسويق وأنظمة الأعمال العملية.',
+      },
       rating: 5,
     },
   ];
@@ -44,10 +74,10 @@ const ReviewsSection = () => {
     <section id="reviews" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gradient-primary">
-          What Clients Say
+          {t('What Clients Say', 'ماذا يقول العملاء')}
         </h2>
         <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-          Real feedback from entrepreneurs building their online businesses
+          {t('Real feedback from entrepreneurs building their online businesses', 'تعليقات حقيقية من رواد الأعمال الذين يبنون أعمالهم على الإنترنت')}
         </p>
 
         <div className="max-w-4xl mx-auto relative">
@@ -61,12 +91,12 @@ const ReviewsSection = () => {
             </div>
 
             <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6 text-foreground/90">
-              "{reviews[currentIndex].text}"
+              "{(t(reviews[currentIndex].en, reviews[currentIndex].ar) as any).text}"
             </p>
 
             <div>
-              <p className="font-bold text-lg">{reviews[currentIndex].name}</p>
-              <p className="text-sm text-muted-foreground">{reviews[currentIndex].role}</p>
+              <p className="font-bold text-lg">{(t(reviews[currentIndex].en, reviews[currentIndex].ar) as any).name}</p>
+              <p className="text-sm text-muted-foreground">{(t(reviews[currentIndex].en, reviews[currentIndex].ar) as any).role}</p>
             </div>
           </Card>
 
