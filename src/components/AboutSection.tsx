@@ -31,29 +31,29 @@ const AboutSection = () => {
             {t('About Me', 'عني')}
           </h2>
           
-          <div className="space-y-6 text-lg text-foreground/80 leading-relaxed mb-12">
-            <p>
+          <div className="space-y-6 text-lg text-foreground/80 leading-relaxed mb-12 animate-fade-in">
+            <p className="text-center">
               {t(
                 "I started my journey in programming but realized success in business isn't just about code — it's about systems. So I merged management, marketing, and sales engineering to help entrepreneurs build online businesses that sell with purpose, not luck.",
                 'بدأت رحلتي في البرمجة لكن أدركت أن النجاح في الأعمال ليس مجرد كود — إنه أنظمة. لذا دمجت الإدارة والتسويق وهندسة المبيعات لمساعدة رواد الأعمال في بناء أعمال إلكترونية تبيع بهدف، وليس بالحظ.'
               )}
             </p>
             
-            <p>
+            <p className="text-center">
               {t(
                 'I founded Bassera Bookstore as a live experiment to build a digital business from zero — analyzing the market, designing the customer journey, and engineering repeat sales.',
                 'أسست مكتبة باصيرة كتجربة حية لبناء عمل رقمي من الصفر — تحليل السوق، تصميم رحلة العميل، وهندسة المبيعات المتكررة.'
               )}
             </p>
             
-            <p>
+            <p className="text-center">
               {t(
                 'This portfolio is built on real-world experience, not theory.',
                 'هذا المعرض مبني على خبرة عملية حقيقية، وليس نظرية.'
               )}
             </p>
             
-            <p className="text-xl font-semibold text-primary">
+            <p className="text-xl font-semibold text-primary text-center">
               {t(
                 "If you're ready to start or grow your project, let's build it step by step. 🚀",
                 'إذا كنت مستعدًا لبدء أو تطوير مشروعك، دعنا نبنيه خطوة بخطوة. 🚀'

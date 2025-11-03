@@ -122,11 +122,17 @@ const ProjectsSection = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full group"
-                      onClick={() => window.open(project.link, '_blank')}
+                      className="w-full group hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                      asChild
                     >
-                      {t('View Project', 'عرض المشروع')}
-                      <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        {t('View Project', 'عرض المشروع')}
+                        <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
                     </Button>
                   )}
                 </div>
