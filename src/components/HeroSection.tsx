@@ -50,10 +50,16 @@ const HeroSection = () => {
                 size="lg" 
                 variant="outline"
                 className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-                onClick={() => window.open('https://wa.me/201111245487', '_blank')}
+                asChild
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                {t('WhatsApp Me', 'تواصل معي')}
+                <a 
+                  href="https://wa.me/201111245487?text=مرحباً، أريد الاستفسار عن خدماتك"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  {t('WhatsApp Me', 'تواصل معي')}
+                </a>
               </Button>
             </div>
           </div>
