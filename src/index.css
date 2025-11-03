@@ -109,6 +109,17 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
+
+  [dir="rtl"],
+  [lang="ar"],
+  .font-cairo {
+    font-family: 'Cairo', sans-serif !important;
+  }
+
+  [dir="rtl"] *,
+  [lang="ar"] * {
+    font-family: 'Cairo', sans-serif !important;
+  }
 }
 
 @layer utilities {

@@ -1,6 +1,6 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroProfile from '@/assets/hero-profile.jpg';
+import heroProfile from '@/assets/ali-profile.jpg';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
@@ -23,12 +23,13 @@ const HeroSection = () => {
               🇵🇸 {t('Business & Marketing Specialist', 'أخصائي أعمال وتسويق')}
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight flex items-center gap-3">
               <span className="text-gradient-primary">Ali Elhadi</span>
+              <span className="text-3xl md:text-4xl">🇵🇸</span>
             </h1>
             
             <h2 className="text-2xl md:text-3xl text-foreground/80 font-semibold">
-              {t('Helping Entrepreneurs Build Profitable Online Businesses', 'مساعدة رواد الأعمال في بناء أعمال مربحة عبر الإنترنت')}
+              {t('Helping Entrepreneurs Build Online Businesses', 'مساعدة رواد الأعمال في بناء أعمال عبر الإنترنت')}
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">

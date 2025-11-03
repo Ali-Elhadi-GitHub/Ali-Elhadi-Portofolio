@@ -50,9 +50,16 @@ const ContactSection = () => {
     { icon: Youtube, label: 'YouTube', href: 'https://youtube.com/@bizeng.alielhadi' },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Form submission logic here
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const message = formData.get('message') as string;
+    
+    const whatsappMessage = `${t('Hello, my name is', 'مرحباً، اسمي')} ${name}\n\n${message}`;
+    const whatsappUrl = `https://wa.me/201111245487?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -139,21 +146,9 @@ const ContactSection = () => {
                 </label>
                 <Input
                   id="name"
+                  name="name"
                   type="text"
                   placeholder={t('John Doe', 'الاسم الكامل')}
-                  required
-                  className="w-full"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  {t('Your Email', 'بريدك الإلكتروني')}
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder={t('john@example.com', 'example@email.com')}
                   required
                   className="w-full"
                 />
@@ -165,8 +160,9 @@ const ContactSection = () => {
                 </label>
                 <Textarea
                   id="message"
+                  name="message"
                   placeholder={t('Tell me about your project...', 'أخبرني عن مشروعك...')}
-                  rows={6}
+                  rows={8}
                   required
                   className="w-full"
                 />

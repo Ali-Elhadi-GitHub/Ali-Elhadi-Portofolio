@@ -10,53 +10,42 @@ const ReviewsSection = () => {
   const reviews = [
     {
       en: {
-        name: 'Ahmed Hassan',
-        role: 'E-commerce Founder',
-        text: 'Ali helped us turn marketing chaos into a clear system. Our sales doubled in 3 months.',
+        name: 'Bassera Bookstore Customer',
+        role: 'Book Lover',
+        text: 'Excellent service and amazing book collection. The shopping experience was smooth and professional.',
       },
       ar: {
-        name: 'أحمد حسن',
-        role: 'مؤسس متجر إلكتروني',
-        text: 'ساعدنا علي على تحويل فوضى التسويق إلى نظام واضح. تضاعفت مبيعاتنا في 3 أشهر.',
+        name: 'عميل مكتبة باصيرة',
+        role: 'محب للكتب',
+        text: 'خدمة ممتازة ومجموعة كتب رائعة. تجربة الشراء كانت سلسة واحترافية.',
       },
       rating: 5,
+      source: 'https://www.facebook.com/share/p/17VguoCNuH/',
     },
     {
       en: {
-        name: 'Sara Mohamed',
-        role: 'Digital Entrepreneur',
-        text: 'Smart, practical, and structured — exactly what entrepreneurs need. No fluff, just results.',
+        name: 'Verified Customer',
+        role: 'E-commerce Client',
+        text: 'Professional handling and great attention to customer needs. Highly recommend this service!',
       },
       ar: {
-        name: 'سارة محمد',
-        role: 'رائدة أعمال رقمية',
-        text: 'ذكي، عملي، ومنظم — بالضبط ما يحتاجه رواد الأعمال. لا حشو، فقط نتائج.',
+        name: 'عميل موثق',
+        role: 'عميل تجارة إلكترونية',
+        text: 'تعامل احترافي واهتمام كبير باحتياجات العملاء. أنصح بالخدمة بشدة!',
       },
       rating: 5,
+      source: 'https://www.facebook.com/share/p/17g99a3gNX/',
     },
     {
       en: {
-        name: 'Omar Abdullah',
-        role: 'Startup Owner',
-        text: 'The strategic approach Ali brings is invaluable. He understands both business and technology.',
+        name: 'Business Owner',
+        role: 'Entrepreneur',
+        text: 'Smart, practical, and structured — exactly what entrepreneurs need to build their business online.',
       },
       ar: {
-        name: 'عمر عبدالله',
-        role: 'صاحب شركة ناشئة',
-        text: 'النهج الاستراتيجي الذي يجلبه علي لا يقدر بثمن. يفهم كلاً من الأعمال والتكنولوجيا.',
-      },
-      rating: 5,
-    },
-    {
-      en: {
-        name: 'Mona Youssef',
-        role: 'Online Business Owner',
-        text: 'Finally, someone who combines marketing knowledge with practical business systems.',
-      },
-      ar: {
-        name: 'منى يوسف',
-        role: 'صاحبة عمل على الإنترنت',
-        text: 'أخيرًا، شخص يجمع بين معرفة التسويق وأنظمة الأعمال العملية.',
+        name: 'صاحب عمل',
+        role: 'رائد أعمال',
+        text: 'ذكي، عملي، ومنظم — بالضبط اللي رواد الأعمال محتاجينه لبناء أعمالهم على الإنترنت.',
       },
       rating: 5,
     },
