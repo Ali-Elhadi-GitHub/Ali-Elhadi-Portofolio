@@ -1,5 +1,6 @@
 import { GraduationCap, BookOpen, TrendingUp, Target } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const CoursesSection = () => {
@@ -80,9 +81,23 @@ const CoursesSection = () => {
                   <div className="p-3 bg-primary/10 rounded-lg shrink-0">
                     <course.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2">{content.title}</h3>
-                    <p className="text-sm text-muted-foreground">{content.description}</p>
+                    <p className="text-sm text-muted-foreground mb-4">{content.description}</p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                      asChild
+                    >
+                      <a 
+                        href={`https://wa.me/201111245487?text=${encodeURIComponent(`مرحباً، أريد الاستفسار عن: ${content.title}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t('Learn More', 'اعرف التفاصيل')}
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -91,13 +106,27 @@ const CoursesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Card className="inline-block p-6 bg-accent/10 border-accent">
-            <p className="text-lg font-semibold text-accent-foreground">
+          <Card className="inline-block p-8 bg-accent/10 border-2 border-accent/30 hover:border-accent/50 transition-all">
+            <div className="text-5xl mb-4">🎓</div>
+            <p className="text-lg font-semibold mb-4">
               {t(
-                '🎓 Stay tuned for course launch announcements!',
-                '🎓 ترقب الإعلان عن بدء الكورسات قريباً!'
+                'Stay tuned for course launch announcements!',
+                'ترقب الإعلان عن بدء الكورسات قريباً!'
               )}
             </p>
+            <Button
+              variant="outline"
+              className="hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              asChild
+            >
+              <a 
+                href="https://wa.me/201111245487?text=مرحباً، أريد الاشتراك للحصول على إشعار بالكورسات الجديدة"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('Subscribe for Updates', 'اشترك ليصلك الإشعار')}
+              </a>
+            </Button>
           </Card>
         </div>
       </div>

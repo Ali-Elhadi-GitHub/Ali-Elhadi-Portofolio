@@ -11,15 +11,16 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('ar');
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'ar' : 'en');
-    document.documentElement.dir = language === 'en' ? 'rtl' : 'ltr';
-    document.documentElement.lang = language === 'en' ? 'ar' : 'en';
+    const newLang = language === 'en' ? 'ar' : 'en';
+    setLanguage(newLang);
+    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = newLang;
   };
 
-  const t = <T,>(en: T, ar: T): T => language === 'en' ? en : ar;
+  const t = <T,>(en: T, ar: T): T => language === 'ar' ? ar : en;
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>

@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="text-center space-y-3">
             <div className="flex items-center justify-center gap-2">
               <p className="text-sm opacity-90">
-                © {new Date().getFullYear()} Ali Elhadi 🇵🇸 · {t('All rights reserved.', 'جميع الحقوق محفوظة.')}
+                © {new Date().getFullYear()} {t('Ali Elhadi', 'مهندس بيزنس - علي الهادي')} 🇵🇸 · {t('All rights reserved.', 'جميع الحقوق محفوظة.')}
               </p>
             </div>
             <div className="flex items-center justify-center gap-2 text-sm opacity-80">

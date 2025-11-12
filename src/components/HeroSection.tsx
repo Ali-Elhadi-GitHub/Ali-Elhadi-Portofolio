@@ -20,30 +20,36 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-6 animate-slide-in-left">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
-              🇵🇸 {t('Business & Marketing Specialist', 'أخصائي أعمال وتسويق')}
+              🇵🇸 {t('Business & Marketing Expert', 'خبير الإدارة والتسويق الرقمي')}
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight flex items-center gap-3">
-              <span className="text-gradient-primary">Ali Elhadi</span>
-              <span className="text-3xl md:text-4xl">🇵🇸</span>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              <span className="text-gradient-primary">{t('Ali Elhadi', 'مهندس بيزنس - علي الهادي')}</span>
+              <span className="text-3xl md:text-4xl ml-3">🇵🇸</span>
             </h1>
             
-            <h2 className="text-2xl md:text-3xl text-foreground/80 font-semibold">
-              {t('Helping Entrepreneurs Build Online Businesses', 'مساعدة رواد الأعمال في بناء أعمال عبر الإنترنت')}
+            <h2 className="text-xl md:text-2xl text-foreground/80 font-semibold">
+              {t('Building Your Digital Success', 'بناء نجاحك الرقمي')}
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('From idea to sales and beyond — I help you build systems that work.', 'من الفكرة إلى المبيعات وما بعدها — أساعدك في بناء أنظمة تعمل.')}
+              {t('I helped hundreds of people build a successful digital presence and grow their online businesses.', 'ساعدت مئات الأشخاص في بناء تواجد رقمي ناجح وتطوير مشاريعهم أونلاين.')}
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground group"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                asChild
               >
-                {t('Start Your Growth Journey', 'ابدأ رحلة نموك')}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <a 
+                  href="https://wa.me/201111245487?text=مرحباً، أريد أن أبدأ في بناء مشروعي الرقمي"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('Start Now', 'ابدأ الآن')}
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
               
               <Button 

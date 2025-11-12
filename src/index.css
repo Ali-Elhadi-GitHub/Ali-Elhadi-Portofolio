@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 26% 14%;
 
-    --primary: 221 83% 25%;
+    --primary: 210 100% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 14% 96%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 38 92% 50%;
+    --accent: 160 84% 39%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,9 +38,9 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 25%), hsl(230 80% 40%));
-    --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 93% 55%));
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 25%) 0%, hsl(230 80% 40%) 50%, hsl(240 70% 50%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 45%), hsl(200 95% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(160 84% 39%), hsl(150 80% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 45%) 0%, hsl(200 95% 50%) 50%, hsl(190 90% 55%) 100%);
 
     --shadow-soft: 0 4px 20px -2px hsl(221 83% 25% / 0.1);
     --shadow-glow: 0 0 40px hsl(38 92% 50% / 0.2);
@@ -112,13 +112,24 @@ All colors MUST be HSL.
 
   [dir="rtl"],
   [lang="ar"],
-  .font-cairo {
-    font-family: 'Cairo', sans-serif !important;
+  .font-tajawal {
+    font-family: 'Tajawal', 'Cairo', sans-serif !important;
   }
 
   [dir="rtl"] *,
   [lang="ar"] * {
-    font-family: 'Cairo', sans-serif !important;
+    font-family: 'Tajawal', 'Cairo', sans-serif !important;
+  }
+  
+  [dir="ltr"],
+  [lang="en"],
+  .font-poppins {
+    font-family: 'Poppins', 'Inter', sans-serif !important;
+  }
+  
+  [dir="ltr"] *,
+  [lang="en"] * {
+    font-family: 'Poppins', 'Inter', sans-serif !important;
   }
 }
 
@@ -127,8 +138,16 @@ All colors MUST be HSL.
     font-family: 'Inter', sans-serif;
   }
 
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
   .font-cairo {
     font-family: 'Cairo', sans-serif;
+  }
+  
+  .font-tajawal {
+    font-family: 'Tajawal', sans-serif;
   }
 
   .text-gradient-primary {

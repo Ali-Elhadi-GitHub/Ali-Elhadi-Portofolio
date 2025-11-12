@@ -40,8 +40,8 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold text-gradient-primary">
-            Ali Elhadi 🇵🇸
+          <a href="#home" className="text-lg md:text-xl font-bold text-gradient-primary hover:opacity-80 transition-opacity">
+            {t('Ali Elhadi', 'مهندس بيزنس - علي الهادي')} 🇵🇸
           </a>
 
           {/* Desktop Navigation */}
