@@ -51,19 +51,6 @@ const Footer = () => {
                 © {new Date().getFullYear()} {t('Ali Elhadi', 'مهندس بيزنس - علي الهادي')} 🇵🇸 · {t('All rights reserved.', 'جميع الحقوق محفوظة.')}
               </p>
             </div>
-            <div className="flex items-center justify-center gap-2 text-sm opacity-80">
-              <span>{t('Built with', 'بني بـ')}</span>
-              <Heart className="h-4 w-4 fill-current text-accent animate-pulse" />
-              <span>{t('using', 'باستخدام')}</span>
-              <a 
-                href="https://lovable.dev" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-semibold hover:text-accent transition-colors"
-              >
-                Lovable
-              </a>
-            </div>
           </div>
         </div>
       </div>
