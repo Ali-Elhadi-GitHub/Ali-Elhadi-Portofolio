@@ -25,11 +25,10 @@ const Navigation = () => {
   const navLinks = [
     { href: '#home', en: 'Home', ar: 'الرئيسية' },
     { href: '#about', en: 'About', ar: 'عني' },
-    { href: '#skills', en: 'Skills', ar: 'المهارات' },
-    { href: '#experience', en: 'Experience', ar: 'الخبرة' },
+    { href: '#services', en: 'Services', ar: 'الخدمات' },
     { href: '#projects', en: 'Projects', ar: 'المشاريع' },
     { href: '#reviews', en: 'Reviews', ar: 'التقييمات' },
-    { href: '#contact', en: 'Contact', ar: 'اتصل' },
+    { href: '#contact', en: 'Contact', ar: 'تواصل' },
   ];
 
   return (
@@ -41,10 +40,9 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="text-lg md:text-xl font-bold text-gradient-primary hover:opacity-80 transition-opacity">
-            {t('Ali Elhadi', 'مهندس بيزنس - علي الهادي')} 🇵🇸
+            {t('Ali Elhadi', 'علي الهادي')} 🇵🇸
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
@@ -55,52 +53,27 @@ const Navigation = () => {
                 {t(link.en, link.ar)}
               </a>
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleLanguage}
-              className="ml-2"
-              title={t('Switch to Arabic', 'التبديل إلى الإنجليزية')}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleLanguage} title={t('Switch to Arabic', 'التبديل إلى الإنجليزية')}>
               <Languages className="h-5 w-5" />
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleLanguage}
-              title={t('Switch to Arabic', 'التبديل إلى الإنجليزية')}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleLanguage}>
               <Languages className="h-5 w-5" />
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
+            <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3 animate-fade-in">
             {navLinks.map((link) => (

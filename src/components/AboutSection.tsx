@@ -1,26 +1,15 @@
-import { GraduationCap, Store, TrendingUp } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Video, Smartphone, Palette, ShoppingCart, HeadphonesIcon } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const AboutSection = () => {
   const { t } = useLanguage();
-  
-  const highlights = [
-    {
-      icon: GraduationCap,
-      en: { title: 'B.Sc. in Information Systems', subtitle: 'Zagazig University' },
-      ar: { title: 'بكالوريوس نظم المعلومات', subtitle: 'جامعة الزقازيق' },
-    },
-    {
-      icon: Store,
-      en: { title: 'Founder of Bassera Bookstore', subtitle: 'Digital Business from Zero' },
-      ar: { title: 'مؤسس مكتبة باصيرة', subtitle: 'عمل رقمي من الصفر' },
-    },
-    {
-      icon: TrendingUp,
-      en: { title: 'Real-World Experience', subtitle: 'Not Theory, Practice' },
-      ar: { title: 'خبرة عملية حقيقية', subtitle: 'ممارسة وليس نظرية' },
-    },
+
+  const specializations = [
+    { icon: Video, en: 'Video Editing', ar: 'مونتاج الفيديوهات' },
+    { icon: Smartphone, en: 'Social Media Setup & Management', ar: 'تأسيس وإدارة صفحات السوشيال ميديا' },
+    { icon: Palette, en: 'Content Design (Canva + AI)', ar: 'تصميم المحتوى باستخدام Canva + AI' },
+    { icon: HeadphonesIcon, en: 'Customer Service Optimization', ar: 'تحسين وتنظيم خدمة العملاء' },
+    { icon: ShoppingCart, en: 'E-commerce Store Setup (Easy Orders)', ar: 'إنشاء متاجر إلكترونية عبر Easy Orders' },
   ];
 
   return (
@@ -28,50 +17,43 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gradient-primary">
-            {t('About Me', 'عني')}
+            {t('About Me', 'نبذة عني')}
           </h2>
-          
-          <div className="space-y-6 text-lg text-foreground/80 leading-relaxed mb-12 animate-fade-in">
+
+          <div className="space-y-5 text-lg text-foreground/80 leading-relaxed mb-12 animate-fade-in">
             <p className="text-center">
               {t(
-                "I started my journey in programming but realized success in business isn't just about code — it's about systems. So I merged management, marketing, and sales engineering to help entrepreneurs build online businesses that sell with purpose, not luck.",
-                'بدأت رحلتي في البرمجة لكن أدركت أن النجاح في الأعمال ليس مجرد كود — إنه أنظمة. لذا دمجت الإدارة والتسويق وهندسة المبيعات لمساعدة رواد الأعمال في بناء أعمال إلكترونية تبيع بهدف، وليس بالحظ.'
+                "I'm Ali Elhadi, specialized in video editing, social media page setup & management, content design using Canva + AI, customer service optimization, and building e-commerce stores via Easy Orders.",
+                'أنا علي الهادي، متخصص في مونتاج الفيديوهات، تأسيس وإدارة صفحات السوشيال ميديا، تصميم المحتوى باستخدام Canva + AI، تحسين وتنظيم خدمة العملاء، وإنشاء متاجر إلكترونية عبر Easy Orders.'
               )}
             </p>
-            
+
             <p className="text-center">
               {t(
-                'I founded Bassera Bookstore as a live experiment to build a digital business from zero — analyzing the market, designing the customer journey, and engineering repeat sales.',
-                'أسست مكتبة باصيرة كتجربة حية لبناء عمل رقمي من الصفر — تحليل السوق، تصميم رحلة العميل، وهندسة المبيعات المتكررة.'
+                'I work with business owners who want to build an organized and clear digital presence — not random.',
+                'أعمل مع أصحاب المشاريع الذين يريدون بناء حضور رقمي منظم وواضح — وليس عشوائي.'
               )}
             </p>
-            
-            <p className="text-center">
-              {t(
-                'This portfolio is built on real-world experience, not theory.',
-                'هذا المعرض مبني على خبرة عملية حقيقية، وليس نظرية.'
-              )}
-            </p>
-            
+
             <p className="text-xl font-semibold text-primary text-center">
               {t(
-                "If you're ready to start or grow your project, let's build it step by step. 🚀",
-                'إذا كنت مستعدًا لبدء أو تطوير مشروعك، دعنا نبنيه خطوة بخطوة. 🚀'
+                'My goal: Turn your idea into a professional digital presence that serves your project and builds customer trust.',
+                'هدفي: تحويل فكرتك إلى تواجد رقمي احترافي يخدم مشروعك ويزيد ثقة عملائك.'
               )}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {highlights.map((item, index) => (
-              <Card
+          {/* Specializations */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {specializations.map((item, index) => (
+              <div
                 key={index}
-                className="p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="flex items-center gap-3 p-4 bg-background rounded-xl border hover:shadow-md hover:border-primary/40 transition-all duration-300 animate-scale-in"
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
-                <item.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-                <h3 className="font-semibold text-lg mb-2">{t(item.en.title, item.ar.title)}</h3>
-                <p className="text-sm text-muted-foreground">{t(item.en.subtitle, item.ar.subtitle)}</p>
-              </Card>
+                <item.icon className="h-6 w-6 text-primary shrink-0" />
+                <span className="text-sm font-medium">{t(item.en, item.ar)}</span>
+              </div>
             ))}
           </div>
         </div>

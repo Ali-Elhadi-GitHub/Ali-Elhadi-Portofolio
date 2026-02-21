@@ -8,32 +8,31 @@ const HeroSection = () => {
   
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-      
-      {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div className="space-y-6 animate-slide-in-left">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
-              🇵🇸 {t('Business & Marketing Expert', 'خبير الإدارة والتسويق الرقمي')}
+              {t('Video Editor & Social Media Manager', 'مونتير ومؤسس صفحات سوشيال ميديا')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="text-gradient-primary">{t('Ali Elhadi', 'مهندس بيزنس - علي الهادي')}</span>
+              <span className="text-gradient-primary">{t('Ali Elhadi', 'علي الهادي')}</span>
               <span className="text-3xl md:text-4xl ml-3">🇵🇸</span>
             </h1>
             
-            <h2 className="text-xl md:text-2xl text-foreground/80 font-semibold">
-              {t('Building Your Digital Success', 'بناء نجاحك الرقمي')}
-            </h2>
+            <p className="text-base text-muted-foreground/80">
+              {t('Muslim | Founder of Mohandes Business Channel', 'مسلم | صاحب قناة مهندس بيزنس')}
+            </p>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('I helped hundreds of people build a successful digital presence and grow their online businesses.', 'ساعدت مئات الأشخاص في بناء تواجد رقمي ناجح وتطوير مشاريعهم أونلاين.')}
+            <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-medium">
+              {t(
+                'I help doctors, educators, and business owners build and manage their digital presence professionally — from idea to execution.',
+                'أساعد الدكاترة، المدرسين، وأصحاب المشاريع على تأسيس وإدارة تواجدهم الرقمي باحتراف — من الفكرة إلى التنفيذ.'
+              )}
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -43,11 +42,11 @@ const HeroSection = () => {
                 asChild
               >
                 <a 
-                  href="https://wa.me/201111245487?text=مرحباً، أريد أن أبدأ في بناء مشروعي الرقمي"
+                  href="https://wa.me/201111245487?text=مرحباً، أريد أعرض عليك مشروعي"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t('Start Now', 'ابدأ الآن')}
+                  {t('Show Me Your Project', 'اعرض عليّ مشروعك')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -64,19 +63,18 @@ const HeroSection = () => {
                   rel="noopener noreferrer"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  {t('WhatsApp Me', 'تواصل معي')}
+                  {t('WhatsApp Me', 'تواصل عبر واتساب')}
                 </a>
               </Button>
             </div>
           </div>
 
-          {/* Right Content - Profile Image */}
           <div className="relative animate-slide-in-right">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-20 animate-pulse-glow" />
               <img
                 src={heroProfile}
-                alt="Ali Elhadi - Business & Marketing Specialist"
+                alt={t('Ali Elhadi - Digital Business Specialist', 'علي الهادي - متخصص في البيزنس الرقمي') as string}
                 className="relative rounded-full w-full h-full object-cover border-8 border-background shadow-2xl"
               />
             </div>
