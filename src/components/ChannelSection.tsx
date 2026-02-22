@@ -1,4 +1,4 @@
-import { Youtube, ExternalLink } from 'lucide-react';
+import { Youtube, ExternalLink, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -14,7 +14,7 @@ const ChannelSection = () => {
   ];
 
   return (
-    <section className="py-24">
+    <section className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <Card className="p-8 md:p-12 text-center border-2 hover:border-primary/40 transition-all duration-300 animate-fade-in">
@@ -41,16 +41,20 @@ const ChannelSection = () => {
               ))}
             </div>
 
-            <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white" asChild>
-              <a
-                href="https://youtube.com/@bizeng.alielhadi"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="mr-2 h-5 w-5" />
-                {t('Visit Channel', 'زيارة القناة')}
-              </a>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white" asChild>
+                <a href="https://youtube.com/@bizeng.alielhadi" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  {t('Visit Channel', 'زيارة القناة')}
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
+                <a href="https://t.me/bizeng_alielhadi" target="_blank" rel="noopener noreferrer">
+                  <Send className="mr-2 h-5 w-5" />
+                  {t('Join Telegram', 'الانضمام لقناة التليجرام')}
+                </a>
+              </Button>
+            </div>
           </Card>
         </div>
       </div>

@@ -11,61 +11,61 @@ const ServicesSection = () => {
       icon: Video,
       en: {
         title: 'Video Editing & Voice Over',
-        description: 'Professional editing for educational and marketing videos + clear and engaging voice over.',
+        description: 'Professional editing for educational and marketing videos + clear and engaging voice over that serves your message.',
       },
       ar: {
         title: 'مونتاج الفيديو والتعليق الصوتي',
-        description: 'إخراج احترافي للفيديوهات التعليمية والتسويقية + تعليق صوتي واضح وجذاب.',
+        description: 'إخراج احترافي للفيديوهات التعليمية والتسويقية + تعليق صوتي واضح وجذاب يخدم رسالتك.',
       },
     },
     {
       icon: Smartphone,
       en: {
         title: 'Social Media Page Setup & Management',
-        description: 'Page creation from scratch, content organization, caption writing, visual identity, and engagement management.',
+        description: 'Page creation from scratch, content plan, caption writing, visual identity, messaging & engagement management.',
       },
       ar: {
         title: 'تأسيس وإدارة صفحات السوشيال ميديا',
-        description: 'إنشاء الصفحة من الصفر، تنظيم المحتوى، كتابة الكابشن، تنسيق الهوية البصرية، وإدارة الرسائل والتفاعل.',
+        description: 'إنشاء الصفحة من الصفر، بناء خطة محتوى واضحة، كتابة النصوص والكابشن، تنظيم الهوية البصرية، وإدارة الرسائل والتفاعل.',
       },
     },
     {
       icon: Palette,
       en: {
         title: 'Design with Canva + AI',
-        description: 'Professional post design, image enhancement, and using AI to develop ideas and content.',
+        description: 'Professional post design, content idea development, image enhancement, and using AI to support business growth.',
       },
       ar: {
         title: 'التصميم باستخدام Canva + AI',
-        description: 'تصميم منشورات احترافية، تحسين الصور، واستخدام الذكاء الاصطناعي لتطوير الأفكار والمحتوى.',
+        description: 'تصميم منشورات احترافية، تطوير أفكار المحتوى، تحسين الصور، واستخدام الذكاء الاصطناعي لدعم نمو البيزنس.',
       },
     },
     {
       icon: ShoppingCart,
       en: {
         title: 'E-commerce Store Setup',
-        description: 'Store design on Easy Orders, product organization, order method linking, and customer experience optimization.',
+        description: 'Store implementation on Easy Orders, product organization, order workflow setup, and customer experience optimization.',
       },
       ar: {
         title: 'إنشاء متاجر إلكترونية',
-        description: 'تصميم وتنفيذ متجر على Easy Orders، تنظيم المنتجات، ربط طرق الطلب، وتحسين تجربة العميل.',
+        description: 'تنفيذ متجر على Easy Orders، تنظيم المنتجات، إعداد آلية الطلب، وتحسين تجربة العميل.',
       },
     },
     {
       icon: HeadphonesIcon,
       en: {
-        title: 'Customer Service Optimization',
-        description: 'Ready reply templates, recurring conversation analysis, and response & follow-up workflow organization.',
+        title: 'Customer Service Structuring',
+        description: 'Professional reply templates, recurring conversation analysis, response workflow organization, and streamlining the client journey from first message to post-sale.',
       },
       ar: {
         title: 'تنظيم وتحسين خدمة العملاء',
-        description: 'إنشاء قوالب ردود جاهزة، تحليل المحادثات المتكررة، وتنظيم آلية الرد والمتابعة.',
+        description: 'إنشاء قوالب ردود احترافية، تحليل المحادثات المتكررة، تنظيم خطوات الرد والمتابعة، وتسهيل رحلة العميل من أول رسالة حتى ما بعد البيع.',
       },
     },
   ];
 
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gradient-primary">
           {t('Services', 'الخدمات')}
@@ -83,7 +83,7 @@ const ServicesSection = () => {
             return (
               <Card
                 key={index}
-                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/40 group animate-fade-in-up"
+                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/40 group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4 group-hover:bg-primary/20 transition-colors">
