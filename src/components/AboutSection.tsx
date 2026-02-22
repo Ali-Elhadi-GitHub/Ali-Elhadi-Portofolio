@@ -5,7 +5,7 @@ const AboutSection = () => {
   const { t } = useLanguage();
 
   const specializations = [
-    { icon: Video, en: 'Video Editing', ar: 'مونتاج الفيديوهات' },
+    { icon: Video, en: 'Video Editing & Voice Over', ar: 'مونتاج الفيديوهات والتعليق الصوتي' },
     { icon: Smartphone, en: 'Social Media Setup & Management', ar: 'تأسيس وإدارة صفحات السوشيال ميديا' },
     { icon: Palette, en: 'Content Design (Canva + AI)', ar: 'تصميم المحتوى باستخدام Canva + AI' },
     { icon: HeadphonesIcon, en: 'Customer Service Optimization', ar: 'تحسين وتنظيم خدمة العملاء' },
