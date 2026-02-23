@@ -1,6 +1,6 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroProfile from '@/assets/ali-profile.jpg';
+import heroProfile from '@/assets/hero-profile.jpg';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
