@@ -11,61 +11,61 @@ const ServicesSection = () => {
       icon: Video,
       en: {
         title: 'Video Editing & Voice Over',
-        description: 'Professional editing for educational and marketing videos + clear and engaging voice over.',
+        description: 'Professional editing for educational and marketing videos + voice over that serves the message.',
       },
       ar: {
         title: 'مونتاج الفيديو والتعليق الصوتي',
-        description: 'إخراج احترافي للفيديوهات التعليمية والتسويقية + تعليق صوتي واضح وجذاب.',
+        description: 'إخراج احترافي للفيديوهات التعليمية والتسويقية + تعليق صوتي يخدم الرسالة.',
       },
     },
     {
       icon: Smartphone,
       en: {
         title: 'Social Media Page Setup & Management',
-        description: 'Page creation from scratch, content organization, caption writing, visual identity, and engagement management.',
+        description: 'Page creation from scratch, content plan, caption writing, identity organization, and engagement management.',
       },
       ar: {
         title: 'تأسيس وإدارة صفحات السوشيال ميديا',
-        description: 'إنشاء الصفحة من الصفر، تنظيم المحتوى، كتابة الكابشن، تنسيق الهوية البصرية، وإدارة الرسائل والتفاعل.',
+        description: 'إنشاء الصفحة من الصفر، بناء خطة محتوى، كتابة الكابتشن، تنظيم الهوية، وإدارة التفاعل.',
       },
     },
     {
       icon: Palette,
       en: {
         title: 'Design with Canva + AI',
-        description: 'Professional post design, image enhancement, and using AI to develop ideas and content.',
+        description: 'Post design, content idea improvement, and image development.',
       },
       ar: {
         title: 'التصميم باستخدام Canva + AI',
-        description: 'تصميم منشورات احترافية، تحسين الصور، واستخدام الذكاء الاصطناعي لتطوير الأفكار والمحتوى.',
+        description: 'تصميم منشورات، تحسين أفكار المحتوى، وتطوير الصور.',
       },
     },
     {
       icon: ShoppingCart,
       en: {
         title: 'E-commerce Store Setup',
-        description: 'Store design on Easy Orders, product organization, order method linking, and customer experience optimization.',
+        description: 'Store implementation, product organization, and customer experience optimization.',
       },
       ar: {
         title: 'إنشاء متاجر إلكترونية',
-        description: 'تصميم وتنفيذ متجر على Easy Orders، تنظيم المنتجات، ربط طرق الطلب، وتحسين تجربة العميل.',
+        description: 'تنفيذ متجر، تنظيم المنتجات، وتحسين تجربة العميل.',
       },
     },
     {
       icon: HeadphonesIcon,
       en: {
         title: 'Customer Service Optimization',
-        description: 'Ready reply templates, recurring conversation analysis, and response & follow-up workflow organization.',
+        description: 'Reply templates, conversation analysis, and follow-up workflow organization.',
       },
       ar: {
         title: 'تنظيم وتحسين خدمة العملاء',
-        description: 'إنشاء قوالب ردود جاهزة، تحليل المحادثات المتكررة، وتنظيم آلية الرد والمتابعة.',
+        description: 'قوالب ردود، تحليل المحادثات، وتنظيم المتابعة.',
       },
     },
   ];
 
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gradient-primary">
           {t('Services', 'الخدمات')}

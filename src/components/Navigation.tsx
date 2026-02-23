@@ -26,7 +26,7 @@ const Navigation = () => {
     { href: '#home', en: 'Home', ar: 'الرئيسية' },
     { href: '#about', en: 'About', ar: 'عني' },
     { href: '#services', en: 'Services', ar: 'الخدمات' },
-    { href: '#projects', en: 'Projects', ar: 'المشاريع' },
+    { href: '#projects', en: 'Portfolio', ar: 'الأعمال' },
     { href: '#reviews', en: 'Reviews', ar: 'التقييمات' },
     { href: '#contact', en: 'Contact', ar: 'تواصل' },
   ];
