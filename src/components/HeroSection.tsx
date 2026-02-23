@@ -1,6 +1,6 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroProfile from '@/assets/ali-profile.jpg';
+import heroProfile from '@/assets/mohandes-business-profile.png';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
@@ -25,13 +25,16 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-base text-muted-foreground/80">
-              {t('Muslim | Founder of Mohandes Business Channel', 'مسلم | صاحب قناة مهندس بيزنس')}
+              {t(
+                'Muslim | Video Editor & Social Media Manager | Founder of Mohandes Business Channel',
+                'مسلم | مونتير ومؤسس صفحات سوشيال ميديا | صاحب قناة مهندس بيزنس'
+              )}
             </p>
             
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-medium">
               {t(
-                'I help doctors, educators, and business owners build and manage their digital presence professionally — from idea to execution.',
-                'أساعد الدكاترة، المدرسين، وأصحاب المشاريع على تأسيس وإدارة تواجدهم الرقمي باحتراف — من الفكرة إلى التنفيذ.'
+                'I help doctors, educators, and business owners build and manage their digital presence professionally — from idea to execution with a clear and well-thought-out plan.',
+                'أساعد الدكاترة، المدرسين، وأصحاب المشاريع على تأسيس وإدارة تواجدهم الرقمي باحتراف — من الفكرة إلى التنفيذ بخطة واضحة ومدروسة.'
               )}
             </p>
 
@@ -74,7 +77,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-20 animate-pulse-glow" />
               <img
                 src={heroProfile}
-                alt={t('Ali Elhadi - Digital Business Specialist', 'علي الهادي - متخصص في البيزنس الرقمي') as string}
+                alt={t('Ali Elhadi - Mohandes Business', 'علي الهادي - مهندس بيزنس') as string}
                 className="relative rounded-full w-full h-full object-cover border-8 border-background shadow-2xl"
               />
             </div>

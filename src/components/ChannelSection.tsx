@@ -1,4 +1,4 @@
-import { Youtube, ExternalLink } from 'lucide-react';
+import { Youtube, ExternalLink, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -10,11 +10,11 @@ const ChannelSection = () => {
     { en: 'Business', ar: 'البيزنس' },
     { en: 'Marketing', ar: 'التسويق' },
     { en: 'E-commerce', ar: 'التجارة الإلكترونية' },
-    { en: 'Small Business Growth', ar: 'تطوير المشاريع الصغيرة' },
+    { en: 'Project Development', ar: 'تطوير المشاريع' },
   ];
 
   return (
-    <section className="py-24">
+    <section className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <Card className="p-8 md:p-12 text-center border-2 hover:border-primary/40 transition-all duration-300 animate-fade-in">
@@ -22,12 +22,16 @@ const ChannelSection = () => {
               <Youtube className="h-12 w-12 text-red-500" />
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gradient-primary">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gradient-primary">
               {t('Mohandes Business Channel', 'قناة مهندس بيزنس')}
             </h2>
-            
+
+            <p className="text-muted-foreground mb-2">
+              {t('Founder of Mohandes Business Channel', 'مؤسس قناة مهندس بيزنس')}
+            </p>
+
             <p className="text-muted-foreground mb-6">
-              {t('Specialized content in:', 'محتوى متخصص في:')}
+              {t('Specialized content in:', 'أقدم محتوى متخصص في:')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -41,16 +45,29 @@ const ChannelSection = () => {
               ))}
             </div>
 
-            <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white" asChild>
-              <a
-                href="https://youtube.com/@bizeng.alielhadi"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="mr-2 h-5 w-5" />
-                {t('Visit Channel', 'زيارة القناة')}
-              </a>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white" asChild>
+                <a
+                  href="https://youtube.com/@bizeng.alielhadi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  {t('Visit Channel', 'زيارة القناة')}
+                </a>
+              </Button>
+
+              <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary hover:text-primary-foreground" asChild>
+                <a
+                  href="https://t.me/bizeng_alielhadi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Send className="mr-2 h-5 w-5" />
+                  {t('Join Telegram Channel', 'الانضمام لقناة التليجرام')}
+                </a>
+              </Button>
+            </div>
           </Card>
         </div>
       </div>

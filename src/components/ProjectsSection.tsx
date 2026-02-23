@@ -1,137 +1,206 @@
-import { ExternalLink, Rocket } from 'lucide-react';
+import { useState } from 'react';
+import { ExternalLink, Play } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import basseraImage from '@/assets/project-bassera.jpg';
 import { useLanguage } from '@/hooks/useLanguage';
 
+type Category = 'all' | 'montage' | 'design' | 'pages' | 'stores' | 'voiceover';
+
 const ProjectsSection = () => {
   const { t } = useLanguage();
-  
+  const [activeFilter, setActiveFilter] = useState<Category>('all');
+
+  const filters: { key: Category; en: string; ar: string }[] = [
+    { key: 'all', en: 'All', ar: 'الكل' },
+    { key: 'montage', en: 'Video Editing', ar: 'مونتاج' },
+    { key: 'design', en: 'Design', ar: 'تصميم' },
+    { key: 'pages', en: 'Page Management', ar: 'إدارة صفحات' },
+    { key: 'stores', en: 'E-commerce Stores', ar: 'متاجر إلكترونية' },
+    { key: 'voiceover', en: 'Voice Over', ar: 'تعليق صوتي' },
+  ];
+
   const projects = [
     {
+      category: 'pages' as Category,
       en: {
-        title: 'Bassera Bookstore',
-        subtitle: 'Digital Retail Startup',
-        description: 'End-to-end online business: branding, marketing, system design, and customer retention strategy. A live case study in building digital commerce from zero.',
-        tags: ['E-commerce', 'Marketing', 'Strategy'],
+        title: 'Bassera Bookstore Content Management',
+        description: 'Full content management for Bassera Bookstore social media pages including branding, content planning, and engagement.',
       },
       ar: {
-        title: 'مكتبة باصيرة',
-        subtitle: 'شركة تجزئة رقمية ناشئة',
-        description: 'عمل شامل عبر الإنترنت: العلامة التجارية، التسويق، تصميم الأنظمة، واستراتيجية الاحتفاظ بالعملاء. دراسة حالة حية في بناء تجارة رقمية من الصفر.',
-        tags: ['التجارة الإلكترونية', 'التسويق', 'الاستراتيجية'],
+        title: 'إدارة محتوى مكتبة بصيرة',
+        description: 'إدارة كاملة لمحتوى صفحات مكتبة بصيرة على السوشيال ميديا من بناء الهوية وتخطيط المحتوى والتفاعل.',
       },
       image: basseraImage,
       link: 'https://basserabookstore.myeasyorders.com/',
-      status: 'Live',
+      type: 'link',
     },
     {
+      category: 'design' as Category,
       en: {
-        title: 'Ceramic Display System',
-        subtitle: 'Product Design & Development',
-        description: 'Innovative display solutions for ceramic products, combining aesthetics with functionality for retail environments.',
-        tags: ['Product Design', 'Innovation', 'Retail'],
+        title: 'Canva + AI Designs for Dr. Ashraf Kotob',
+        description: 'Professional social media designs using Canva and AI tools for Peak Motion Therapy.',
       },
       ar: {
-        title: 'نظام عرض السيراميك',
-        subtitle: 'تصميم وتطوير المنتجات',
-        description: 'حلول عرض مبتكرة لمنتجات السيراميك، تجمع بين الجماليات والوظائف للبيئات التجارية.',
-        tags: ['تصميم المنتجات', 'الابتكار', 'البيع بالتجزئة'],
+        title: 'تصميمات Canva + AI لدكتور أشرف قطب',
+        description: 'تصميمات احترافية للسوشيال ميديا باستخدام Canva وأدوات الذكاء الاصطناعي لـ Peak Motion Therapy.',
       },
-      status: 'Coming Soon',
+      type: 'image',
     },
     {
+      category: 'montage' as Category,
       en: {
-        title: 'E-Commerce Optimization Case Study',
-        subtitle: 'Growth Strategy',
-        description: 'Complete optimization framework: conversion rate improvement, customer journey mapping, and retention systems.',
-        tags: ['CRO', 'UX', 'Growth'],
+        title: 'Video Editing Sample 1',
+        description: 'Professional video editing for marketing and educational content.',
       },
       ar: {
-        title: 'دراسة حالة تحسين التجارة الإلكترونية',
-        subtitle: 'استراتيجية النمو',
-        description: 'إطار عمل تحسين كامل: تحسين معدل التحويل، تخطيط رحلة العميل، وأنظمة الاحتفاظ.',
-        tags: ['تحسين التحويل', 'تجربة المستخدم', 'النمو'],
+        title: 'نموذج مونتاج فيديو 1',
+        description: 'مونتاج فيديو احترافي لمحتوى تسويقي وتعليمي.',
       },
-      status: 'Coming Soon',
+      videoUrl: 'https://www.youtube.com/shorts/4mB2jYIM3D0',
+      type: 'video',
+    },
+    {
+      category: 'montage' as Category,
+      en: {
+        title: 'Video Editing Sample 2',
+        description: 'Creative video editing with professional transitions and effects.',
+      },
+      ar: {
+        title: 'نموذج مونتاج فيديو 2',
+        description: 'مونتاج فيديو إبداعي مع انتقالات وتأثيرات احترافية.',
+      },
+      videoUrl: 'https://www.youtube.com/shorts/FMiiRp76dOA',
+      type: 'video',
+    },
+    {
+      category: 'stores' as Category,
+      en: {
+        title: 'Bassera Bookstore E-commerce',
+        description: 'Complete e-commerce store setup on Easy Orders with product organization and customer experience optimization.',
+      },
+      ar: {
+        title: 'متجر مكتبة بصيرة الإلكتروني',
+        description: 'تصميم وتنفيذ متجر إلكتروني كامل على Easy Orders مع تنظيم المنتجات وتحسين تجربة العميل.',
+      },
+      image: basseraImage,
+      link: 'https://basserabookstore.myeasyorders.com/',
+      type: 'link',
+    },
+    {
+      category: 'voiceover' as Category,
+      en: {
+        title: 'Voice Over Sample',
+        description: 'Clear and engaging voice over for marketing and educational videos.',
+      },
+      ar: {
+        title: 'نموذج تعليق صوتي',
+        description: 'تعليق صوتي واضح وجذاب لفيديوهات تسويقية وتعليمية.',
+      },
+      videoUrl: 'https://www.youtube.com/shorts/65oxQqwmZsE',
+      type: 'video',
     },
   ];
 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
+    : projects.filter(p => p.category === activeFilter);
+
+  const getYouTubeEmbedUrl = (url: string) => {
+    const shortsMatch = url.match(/\/shorts\/([^?]+)/);
+    if (shortsMatch) return `https://www.youtube.com/embed/${shortsMatch[1]}`;
+    return url;
+  };
+
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gradient-primary">
-          {t('Featured Projects', 'المشاريع المميزة')}
+          {t('Portfolio', 'معرض الأعمال')}
         </h2>
-        <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-          {t('Real businesses, real results — from concept to execution', 'أعمال حقيقية، نتائج حقيقية — من الفكرة إلى التنفيذ')}
+        <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+          {t('Real projects, real results — from idea to execution', 'مشاريع حقيقية، نتائج حقيقية — من الفكرة إلى التنفيذ')}
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {projects.map((project, index) => {
-            const content = t(project.en, project.ar) as any;
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {filters.map((filter) => (
+            <button
+              key={filter.key}
+              onClick={() => setActiveFilter(filter.key)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeFilter === filter.key
+                  ? 'bg-primary text-primary-foreground shadow-md'
+                  : 'bg-background border hover:border-primary/40 text-foreground/70 hover:text-foreground'
+              }`}
+            >
+              {t(filter.en, filter.ar)}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {filteredProjects.map((project, index) => {
+            const content = t(project.en, project.ar) as { title: string; description: string };
             return (
               <Card
                 key={index}
-                className="overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 animate-scale-in"
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {project.image ? (
+                {project.type === 'video' && project.videoUrl ? (
+                  <div className="aspect-[9/16] max-h-[300px] w-full">
+                    <iframe
+                      src={getYouTubeEmbedUrl(project.videoUrl)}
+                      title={content.title}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : project.image ? (
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={project.image}
                       alt={content.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    {project.status === 'Live' && (
-                      <div className="absolute top-4 right-4 px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full">
-                        {t('Live', 'مباشر')}
-                      </div>
-                    )}
                   </div>
                 ) : (
                   <div className="relative h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                    <Rocket className="h-16 w-16 text-muted-foreground/20" />
-                    {project.status === 'Coming Soon' && (
-                      <div className="absolute top-4 right-4 px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full">
-                        {t('Coming Soon', 'قريباً')}
-                      </div>
-                    )}
+                    <Play className="h-16 w-16 text-muted-foreground/20" />
                   </div>
                 )}
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-1">{content.title}</h3>
-                  <p className="text-sm text-accent font-semibold mb-3">{content.subtitle}</p>
-                  <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
-                    {content.description}
-                  </p>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold mb-2">{content.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{content.description}</p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {content.tags.map((tag: string, i: number) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 bg-secondary text-xs font-medium rounded-md"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {project.link && project.status === 'Live' && (
+                  {project.link && (
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full group hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                      className="w-full border-primary/30 hover:bg-primary hover:text-primary-foreground"
                       asChild
                     >
-                      <a 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
                         {t('View Project', 'عرض المشروع')}
-                        <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
+                  )}
+
+                  {project.videoUrl && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full border-primary/30 hover:bg-primary hover:text-primary-foreground"
+                      asChild
+                    >
+                      <a href={project.videoUrl} target="_blank" rel="noopener noreferrer">
+                        <Play className="mr-2 h-4 w-4" />
+                        {t('Watch Video', 'مشاهدة الفيديو')}
                       </a>
                     </Button>
                   )}
