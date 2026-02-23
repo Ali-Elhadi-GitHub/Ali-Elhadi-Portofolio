@@ -42,18 +42,21 @@ const ContactSection = () => {
   const socialLinks = [
     { icon: MessageSquare, label: 'WhatsApp', href: 'https://wa.me/201111245487' },
     { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/bizeng.alielhadi' },
+    { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/bizeng_alielhadi' },
     { icon: TelegramIcon, label: 'Telegram', href: 'https://t.me/bizeng_alielhadi' },
+    { icon: Music, label: 'TikTok', href: 'https://tiktok.com/@bizeng_alielhadi' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/bizeng-alielhadi' },
+    { icon: Twitter, label: 'X (Twitter)', href: 'https://x.com/bizeng_ali' },
+    { icon: Youtube, label: 'YouTube', href: 'https://youtube.com/@bizeng.alielhadi' },
   ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name') as string;
-    const phone = formData.get('phone') as string;
-    const projectType = formData.get('projectType') as string;
     const message = formData.get('message') as string;
     
-    const whatsappMessage = `${t('Hello, my name is', 'مرحباً، اسمي')} ${name}\n${t('Phone:', 'الهاتف:')} ${phone}\n${t('Project type:', 'نوع المشروع:')} ${projectType}\n\n${message}`;
+    const whatsappMessage = `${t('Hello, my name is', 'مرحباً، اسمي')} ${name}\n\n${message}`;
     const whatsappUrl = `https://wa.me/201111245487?text=${encodeURIComponent(whatsappMessage)}`;
     
     window.open(whatsappUrl, '_blank');
@@ -66,8 +69,11 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-primary">
-            {t('Contact Me', 'تواصل معي')}
+            {t("Let's Build Something Great", 'دعونا نبني شيئاً عظيماً')}
           </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {t('Ready to grow your business online? Let\'s connect and turn your vision into reality.', 'مستعد لتنمية عملك على الإنترنت؟ دعنا نتواصل ونحول رؤيتك إلى واقع.')}
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -79,7 +85,7 @@ const ContactSection = () => {
                 return (
                   <Card
                     key={index}
-                    className="p-6 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary animate-slide-in-left"
+                    className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-x-2 border-l-4 border-l-primary animate-slide-in-left"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {item.href ? (
@@ -109,55 +115,64 @@ const ContactSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-3 rounded-xl bg-card border hover:border-primary/40 hover:shadow-md transition-all duration-300 hover:scale-105"
-                  title={social.label}
-                >
-                  <social.icon className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-medium">{social.label}</span>
-                </a>
-              ))}
-            </div>
+            <Card className="p-6 animate-scale-in">
+              <h3 className="font-bold text-lg mb-4">{t('Connect on Social Media', 'تواصل على وسائل التواصل')}</h3>
+              <div className="grid grid-cols-4 gap-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-secondary transition-all duration-300 hover:scale-110 group"
+                    title={social.label}
+                  >
+                    <social.icon className="h-6 w-6 text-primary group-hover:text-accent transition-colors" />
+                    <span className="text-xs text-muted-foreground group-hover:text-foreground text-center">
+                      {social.label.split(' ')[0]}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </Card>
           </div>
 
           {/* Contact Form */}
           <Card className="p-8 animate-slide-in-right">
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  {t('Your Name', 'الاسم')}
+                  {t('Your Name', 'اسمك')}
                 </label>
-                <Input id="name" name="name" type="text" placeholder={t('Full name', 'الاسم الكامل') as string} required />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                  {t('Phone Number', 'رقم الهاتف')}
-                </label>
-                <Input id="phone" name="phone" type="tel" placeholder={t('+20 xxx xxx xxxx', '+20 xxx xxx xxxx') as string} required />
-              </div>
-
-              <div>
-                <label htmlFor="projectType" className="block text-sm font-medium mb-2">
-                  {t('Project Type', 'نوع المشروع')}
-                </label>
-                <Input id="projectType" name="projectType" type="text" placeholder={t('e.g. Online store, clinic page...', 'مثال: متجر إلكتروني، صفحة عيادة...') as string} />
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder={t('John Doe', 'الاسم الكامل')}
+                  required
+                  className="w-full"
+                />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   {t('Your Message', 'رسالتك')}
                 </label>
-                <Textarea id="message" name="message" placeholder={t('Tell me about your project...', 'أخبرني عن مشروعك...') as string} rows={5} required />
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder={t('Tell me about your project...', 'أخبرني عن مشروعك...')}
+                  rows={8}
+                  required
+                  className="w-full"
+                />
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group">
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground group"
+              >
                 {t('Send Message', 'إرسال الرسالة')}
                 <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>

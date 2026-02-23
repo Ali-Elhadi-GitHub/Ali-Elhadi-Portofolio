@@ -1,15 +1,11 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import IntroVideoSection from '@/components/IntroVideoSection';
 import AboutSection from '@/components/AboutSection';
-import StatsCounter from '@/components/StatsCounter';
 import ServicesSection from '@/components/ServicesSection';
 import WhyChooseMe from '@/components/WhyChooseMe';
-import PortfolioSection from '@/components/PortfolioSection';
-import ReviewsSection from '@/components/ReviewsSection';
+import ProjectsSection from '@/components/ProjectsSection';
 import ChannelSection from '@/components/ChannelSection';
-import WorkflowSection from '@/components/WorkflowSection';
-import CTASection from '@/components/CTASection';
+import ReviewsSection from '@/components/ReviewsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
@@ -21,16 +17,12 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <IntroVideoSection />
         <AboutSection />
-        <StatsCounter />
         <ServicesSection />
         <WhyChooseMe />
-        <PortfolioSection />
-        <ReviewsSection />
+        <ProjectsSection />
         <ChannelSection />
-        <WorkflowSection />
-        <CTASection />
+        <ReviewsSection />
         <ContactSection />
       </main>
       <Footer />

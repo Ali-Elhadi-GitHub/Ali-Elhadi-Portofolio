@@ -1,6 +1,6 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroProfile from '@/assets/hero-profile.jpg';
+import heroProfile from '@/assets/ali-profile.jpg';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-slide-in-left">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
-              {t('Muslim | Video Editor & Social Media Manager', 'مسلم | مونتير ومؤسس صفحات سوشيال ميديا')}
+              {t('Video Editor & Social Media Manager', 'مونتير ومؤسس صفحات سوشيال ميديا')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -25,13 +25,13 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-base text-muted-foreground/80">
-              {t('Founder of Mohandes Business Channel', 'صاحب قناة مهندس بيزنس')}
+              {t('Muslim | Founder of Mohandes Business Channel', 'مسلم | صاحب قناة مهندس بيزنس')}
             </p>
             
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-medium">
               {t(
-                'I help doctors, educators, and business owners build and manage their digital presence professionally — from idea to execution with a clear and structured plan.',
-                'أساعد الدكاترة، المدرسين، وأصحاب المشاريع على تأسيس وإدارة تواجدهم الرقمي باحتراف — من الفكرة إلى التنفيذ بخطة واضحة ومدروسة.'
+                'I help doctors, educators, and business owners build and manage their digital presence professionally — from idea to execution.',
+                'أساعد الدكاترة، المدرسين، وأصحاب المشاريع على تأسيس وإدارة تواجدهم الرقمي باحتراف — من الفكرة إلى التنفيذ.'
               )}
             </p>
 

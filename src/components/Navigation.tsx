@@ -10,7 +10,9 @@ const Navigation = () => {
   const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -24,15 +26,17 @@ const Navigation = () => {
     { href: '#home', en: 'Home', ar: 'الرئيسية' },
     { href: '#about', en: 'About', ar: 'عني' },
     { href: '#services', en: 'Services', ar: 'الخدمات' },
-    { href: '#portfolio', en: 'Portfolio', ar: 'الأعمال' },
+    { href: '#projects', en: 'Projects', ar: 'المشاريع' },
     { href: '#reviews', en: 'Reviews', ar: 'التقييمات' },
     { href: '#contact', en: 'Contact', ar: 'تواصل' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="text-lg md:text-xl font-bold text-gradient-primary hover:opacity-80 transition-opacity">
@@ -41,11 +45,15 @@ const Navigation = () => {
 
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-medium">
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-medium"
+              >
                 {t(link.en, link.ar)}
               </a>
             ))}
-            <Button variant="ghost" size="icon" onClick={toggleLanguage}>
+            <Button variant="ghost" size="icon" onClick={toggleLanguage} title={t('Switch to Arabic', 'التبديل إلى الإنجليزية')}>
               <Languages className="h-5 w-5" />
             </Button>
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
@@ -69,7 +77,12 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3 animate-fade-in">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-foreground/80 hover:text-primary transition-colors duration-200">
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
+              >
                 {t(link.en, link.ar)}
               </a>
             ))}
