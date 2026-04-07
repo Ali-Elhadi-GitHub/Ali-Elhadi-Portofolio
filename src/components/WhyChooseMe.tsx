@@ -1,4 +1,4 @@
-import { Search, Clock, ShoppingCart, Stethoscope, Users } from 'lucide-react';
+import { Search, Rocket, ShoppingCart, Brain, Users, TrendingUp } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -7,58 +7,58 @@ const WhyChooseMe = () => {
 
   const reasons = [
     {
-      icon: Search,
+      icon: Rocket,
       en: {
-        title: 'I start with analysis before execution',
-        description: 'I analyze your project first, then build a well-thought-out and scalable action plan.',
+        title: 'Build SaaS products with real demand',
+        description: 'I help you validate and build products that solve real market problems.',
       },
       ar: {
-        title: 'أبدأ بالتحليل قبل التنفيذ',
-        description: 'أحلل مشروعك أولًا ثم أبني خطة عمل مدروسة قابلة للتطوير.',
-      },
-    },
-    {
-      icon: Clock,
-      en: {
-        title: 'Commitment to delivery',
-        description: 'I commit to agreed deadlines, God willing.',
-      },
-      ar: {
-        title: 'الالتزام في التسليم',
-        description: 'ألتزم بالمواعيد المتفق عليها بإذن الله.',
-      },
-    },
-    {
-      icon: ShoppingCart,
-      en: {
-        title: 'Hands-on e-commerce experience',
-        description: 'Through my project Bassera Bookstore.',
-      },
-      ar: {
-        title: 'خبرة عملية في التجارة الإلكترونية',
-        description: 'من خلال مشروعي مكتبة بصيرة.',
-      },
-    },
-    {
-      icon: Stethoscope,
-      en: {
-        title: 'Experience in specialized medical field',
-        description: 'Video editing, voice over, and page management for Peak Motion Therapy | Dr. Ashraf Kotob.',
-      },
-      ar: {
-        title: 'خبرة في مجال طبي متخصص',
-        description: 'مونتاج وتعليق صوتي وإدارة صفحات Peak Motion Therapy | Dr. Ashraf Kotob.',
+        title: 'بناء منتجات SaaS بطلب حقيقي',
+        description: 'أساعدك في التحقق وبناء منتجات تحل مشاكل حقيقية في السوق.',
       },
     },
     {
       icon: Users,
       en: {
-        title: 'I focus on simplifying the customer experience',
-        description: 'I organize the customer journey from the first message to after-sale.',
+        title: 'Get first customers (0 → 10)',
+        description: 'Proven strategies to acquire your first paying customers.',
       },
       ar: {
-        title: 'أركز على تسهيل تجربة العميل',
-        description: 'أنظم رحلة العميل من أول رسالة حتى ما بعد البيع.',
+        title: 'الحصول على أول عملاء (0 → 10)',
+        description: 'استراتيجيات مجربة لاكتساب أول عملاء يدفعون.',
+      },
+    },
+    {
+      icon: TrendingUp,
+      en: {
+        title: 'B2B SaaS Sales',
+        description: 'Build pipeline and close deals with businesses systematically.',
+      },
+      ar: {
+        title: 'مبيعات B2B SaaS',
+        description: 'بناء Pipeline وإغلاق الصفقات مع الشركات بشكل منظم.',
+      },
+    },
+    {
+      icon: ShoppingCart,
+      en: {
+        title: 'Full system: Product → CRM → Pipeline → Sales',
+        description: 'End-to-end sales infrastructure setup and optimization.',
+      },
+      ar: {
+        title: 'نظام متكامل: منتج → CRM → Pipeline → مبيعات',
+        description: 'إعداد وتحسين البنية التحتية للمبيعات من البداية للنهاية.',
+      },
+    },
+    {
+      icon: Brain,
+      en: {
+        title: 'Use AI to increase productivity',
+        description: 'Leverage AI tools to automate and optimize your workflows.',
+      },
+      ar: {
+        title: 'استخدام AI لزيادة الإنتاجية',
+        description: 'استثمار أدوات الذكاء الاصطناعي لأتمتة وتحسين سير العمل.',
       },
     },
   ];
@@ -66,9 +66,15 @@ const WhyChooseMe = () => {
   return (
     <section className="py-24">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient-primary">
-          {t('Why Request My Services?', 'لماذا تطلب خدماتي؟')}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gradient-primary">
+          {t('What I Help With', 'كيف أساعدك؟')}
         </h2>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          {t(
+            'From idea to scale — I help you build the right foundation',
+            'من الفكرة إلى التوسع — أساعدك في بناء الأساس الصحيح'
+          )}
+        </p>
 
         <div className="max-w-4xl mx-auto space-y-4">
           {reasons.map((reason, index) => {

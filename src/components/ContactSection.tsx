@@ -10,10 +10,10 @@ const ContactSection = () => {
 
   const contactInfo = [
     {
-      icon: Mail,
-      en: { label: 'Email', value: 'alielhadi.contact@gmail.com' },
-      ar: { label: 'البريد الإلكتروني', value: 'alielhadi.contact@gmail.com' },
-      href: 'mailto:alielhadi.contact@gmail.com',
+      icon: MapPin,
+      en: { label: 'Location', value: 'Zagazig, Egypt' },
+      ar: { label: 'الموقع', value: 'الزقازيق، مصر' },
+      href: null,
     },
     {
       icon: Phone,
@@ -22,10 +22,10 @@ const ContactSection = () => {
       href: 'tel:+201111245487',
     },
     {
-      icon: MapPin,
-      en: { label: 'Location', value: 'Egypt' },
-      ar: { label: 'الموقع', value: 'مصر' },
-      href: null,
+      icon: Mail,
+      en: { label: 'Email', value: 'alielhadi.contact@gmail.com' },
+      ar: { label: 'البريد الإلكتروني', value: 'alielhadi.contact@gmail.com' },
+      href: 'mailto:alielhadi.contact@gmail.com',
     },
   ];
 
@@ -54,7 +54,6 @@ const ContactSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
           <div className="space-y-6">
             <div className="space-y-4">
               {contactInfo.map((item, index) => {
@@ -91,7 +90,6 @@ const ContactSection = () => {
               })}
             </div>
 
-            {/* Quick Action Buttons */}
             <div className="flex flex-wrap gap-3">
               <Button className="bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,40%)] text-white" asChild>
                 <a href="https://wa.me/201111245487" target="_blank" rel="noopener noreferrer">
@@ -114,7 +112,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <Card className="p-8 animate-slide-in-right">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
@@ -135,7 +132,7 @@ const ContactSection = () => {
                 <label htmlFor="projectType" className="block text-sm font-medium mb-2">
                   {t('Project Type', 'نوع المشروع')}
                 </label>
-                <Input id="projectType" name="projectType" type="text" placeholder={t('e.g. E-commerce, Clinic, Education...', 'مثال: تجارة إلكترونية، عيادة، تعليم...') as string} required />
+                <Input id="projectType" name="projectType" type="text" placeholder={t('e.g. SaaS, E-commerce, Content...', 'مثال: SaaS، تجارة إلكترونية، محتوى...') as string} required />
               </div>
 
               <div>

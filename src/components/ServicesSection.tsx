@@ -1,4 +1,4 @@
-import { Video, Smartphone, Palette, ShoppingCart, HeadphonesIcon, MessageCircle } from 'lucide-react';
+import { TrendingUp, Video, Smartphone, Settings, Brain, MessageCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -8,58 +8,58 @@ const ServicesSection = () => {
 
   const services = [
     {
-      icon: Video,
+      icon: TrendingUp,
       en: {
-        title: 'Video Editing & Voice Over',
-        description: 'Professional editing for educational and marketing videos + voice over that serves the message.',
+        title: 'SaaS Consulting & Growth',
+        description: 'Build SaaS products with real market demand. Get first customers (0 → 10). B2B SaaS sales strategy.',
       },
       ar: {
-        title: 'مونتاج الفيديو والتعليق الصوتي',
-        description: 'إخراج احترافي للفيديوهات التعليمية والتسويقية + تعليق صوتي يخدم الرسالة.',
+        title: 'استشارات ونمو SaaS',
+        description: 'بناء منتجات SaaS بطلب حقيقي في السوق. الحصول على أول عملاء (0 → 10). استراتيجية مبيعات B2B SaaS.',
+      },
+    },
+    {
+      icon: Video,
+      en: {
+        title: 'Video Editing',
+        description: 'Professional editing for marketing, educational, and social media content.',
+      },
+      ar: {
+        title: 'مونتاج الفيديو',
+        description: 'مونتاج احترافي للمحتوى التسويقي والتعليمي والسوشيال ميديا.',
       },
     },
     {
       icon: Smartphone,
       en: {
-        title: 'Social Media Page Setup & Management',
-        description: 'Page creation from scratch, content plan, caption writing, identity organization, and engagement management.',
+        title: 'Social Media Management',
+        description: 'Page setup, content planning, identity branding, engagement management, and social selling.',
       },
       ar: {
-        title: 'تأسيس وإدارة صفحات السوشيال ميديا',
-        description: 'إنشاء الصفحة من الصفر، بناء خطة محتوى، كتابة الكابتشن، تنظيم الهوية، وإدارة التفاعل.',
+        title: 'إدارة صفحات السوشيال ميديا',
+        description: 'تأسيس الصفحات، تخطيط المحتوى، بناء الهوية، إدارة التفاعل، والبيع عبر السوشيال.',
       },
     },
     {
-      icon: Palette,
+      icon: Settings,
       en: {
-        title: 'Design with Canva + AI',
-        description: 'Post design, content idea improvement, and image development.',
+        title: 'CRM Setup & Sales Systems',
+        description: 'Build full system: Product → CRM → Pipeline → Sales. Optimize your sales process end-to-end.',
       },
       ar: {
-        title: 'التصميم باستخدام Canva + AI',
-        description: 'تصميم منشورات، تحسين أفكار المحتوى، وتطوير الصور.',
+        title: 'إعداد CRM وأنظمة المبيعات',
+        description: 'بناء نظام متكامل: منتج → CRM → Pipeline → مبيعات. تحسين عملية البيع من البداية للنهاية.',
       },
     },
     {
-      icon: ShoppingCart,
+      icon: Brain,
       en: {
-        title: 'E-commerce Store Setup',
-        description: 'Store implementation, product organization, and customer experience optimization.',
+        title: 'AI Consulting & Training',
+        description: 'Use AI to increase productivity. Training teams on AI tools for different industries.',
       },
       ar: {
-        title: 'إنشاء متاجر إلكترونية',
-        description: 'تنفيذ متجر، تنظيم المنتجات، وتحسين تجربة العميل.',
-      },
-    },
-    {
-      icon: HeadphonesIcon,
-      en: {
-        title: 'Customer Service Optimization',
-        description: 'Reply templates, conversation analysis, and follow-up workflow organization.',
-      },
-      ar: {
-        title: 'تنظيم وتحسين خدمة العملاء',
-        description: 'قوالب ردود، تحليل المحادثات، وتنظيم المتابعة.',
+        title: 'استشارات وتدريب الذكاء الاصطناعي',
+        description: 'استخدام الذكاء الاصطناعي لزيادة الإنتاجية. تدريب الفرق على أدوات AI لمختلف المجالات.',
       },
     },
   ];
@@ -72,8 +72,8 @@ const ServicesSection = () => {
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           {t(
-            'Professional digital services to build your online presence from scratch',
-            'خدمات رقمية احترافية لبناء تواجدك الرقمي من الصفر'
+            'End-to-end digital services to build, grow, and scale your business',
+            'خدمات رقمية شاملة لبناء ونمو وتوسيع مشروعك'
           )}
         </p>
 

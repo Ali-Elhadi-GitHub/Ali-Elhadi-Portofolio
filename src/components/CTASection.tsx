@@ -10,12 +10,12 @@ const CTASection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-primary">
-            {t("Let's Get Started", 'دعنا نبدأ')}
+            {t('Start your SaaS journey', 'ابدأ رحلتك في SaaS')}
           </h2>
           <p className="text-lg text-muted-foreground mb-10">
             {t(
-              'Ready to start developing your project digitally?',
-              'جاهز تبدأ في تطوير مشروعك رقميًا؟'
+              'Get your first clients and scale your business',
+              'احصل على أول عملائك ووسّع مشروعك'
             )}
           </p>
 
@@ -26,28 +26,12 @@ const CTASection = () => {
               asChild
             >
               <a
-                href="https://wa.me/201111245487?text=مرحباً، أريد حجز استشارة"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('Book a Consultation', 'احجز استشارة')}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-              asChild
-            >
-              <a
-                href="https://wa.me/201111245487?text=مرحباً، أريد الاستفسار عن خدماتك"
+                href="https://wa.me/201111245487?text=مرحباً، أريد أبدأ رحلتي في SaaS"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
-                {t('WhatsApp Me', 'تواصل عبر واتساب')}
+                {t('Contact on WhatsApp', 'تواصل عبر واتساب')}
               </a>
             </Button>
           </div>
