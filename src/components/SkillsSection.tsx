@@ -1,4 +1,5 @@
 import { useLanguage } from '@/hooks/useLanguage';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 const SkillsSection = () => {
   const { t } = useLanguage();
@@ -21,19 +22,19 @@ const SkillsSection = () => {
   return (
     <section className="py-24">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient-primary">
-          {t('Skills', 'المهارات')}
-        </h2>
+        <ScrollAnimation animation="fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient-primary">
+            {t('Skills', 'المهارات')}
+          </h2>
+        </ScrollAnimation>
 
         <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
           {skills.map((skill, index) => (
-            <span
-              key={index}
-              className="px-5 py-2.5 bg-primary/10 text-primary rounded-full text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default animate-scale-in"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              {t(skill.en, skill.ar)}
-            </span>
+            <ScrollAnimation key={index} animation="scale" delay={index * 50}>
+              <span className="inline-block px-5 py-2.5 bg-primary/10 text-primary rounded-full text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default">
+                {t(skill.en, skill.ar)}
+              </span>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

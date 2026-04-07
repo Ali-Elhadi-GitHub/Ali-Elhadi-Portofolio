@@ -2,6 +2,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroProfile from '@/assets/ali-profile.png';
 import { useLanguage } from '@/hooks/useLanguage';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -14,54 +15,48 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-slide-in-left">
-            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
-              {t('SaaS Growth | Video Editor | Social Media Management', 'نمو SaaS | مونتير فيديو | إدارة سوشيال ميديا')}
-            </div>
+          <div className="space-y-6">
+            <ScrollAnimation animation="fade-right" delay={0}>
+              <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
+                {t('SaaS Growth | Video Editor | Social Media Management', 'نمو SaaS | مونتير فيديو | إدارة سوشيال ميديا')}
+              </div>
+            </ScrollAnimation>
             
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="text-gradient-primary">{t('Ali Elhadi', 'علي الهادي')}</span>
-              <span className="text-3xl md:text-4xl ml-3">🇵🇸</span>
-            </h1>
+            <ScrollAnimation animation="fade-right" delay={100}>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                <span className="text-gradient-primary">{t('Ali Elhadi', 'علي الهادي')}</span>
+                <span className="text-3xl md:text-4xl ml-3">🇵🇸</span>
+              </h1>
+            </ScrollAnimation>
             
-            <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-medium">
-              {t(
-                'Helping SaaS founders grow from 0 → 10 customers, then scale',
-                'أساعد مؤسسي SaaS على النمو من 0 → 10 عملاء، ثم التوسع'
-              )}
-            </p>
+            <ScrollAnimation animation="fade-right" delay={200}>
+              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-medium">
+                {t(
+                  'Helping SaaS founders grow from 0 → 10 customers, then scale',
+                  'أساعد مؤسسي SaaS على النمو من 0 → 10 عملاء، ثم التوسع'
+                )}
+              </p>
+            </ScrollAnimation>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground group"
-                asChild
-              >
-                <a 
-                  href="https://wa.me/201111245487?text=مرحباً، أريد أعرض عليك مشروعي"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  {t('Contact on WhatsApp', 'تواصل عبر واتساب')}
-                </a>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-                asChild
-              >
-                <a href="#projects">
-                  {t('View Content', 'عرض المحتوى')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-            </div>
+            <ScrollAnimation animation="fade-up" delay={350}>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground group" asChild>
+                  <a href="https://wa.me/201111245487?text=مرحباً، أريد أعرض عليك مشروعي" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    {t('Contact on WhatsApp', 'تواصل عبر واتساب')}
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground" asChild>
+                  <a href="#projects">
+                    {t('View Content', 'عرض المحتوى')}
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </div>
+            </ScrollAnimation>
           </div>
 
-          <div className="relative animate-slide-in-right">
+          <ScrollAnimation animation="scale" delay={200}>
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-20 animate-pulse-glow" />
               <img
@@ -70,7 +65,7 @@ const HeroSection = () => {
                 className="relative rounded-full w-full h-full object-cover border-8 border-background shadow-2xl"
               />
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>
