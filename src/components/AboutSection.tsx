@@ -1,16 +1,16 @@
-import { Video, Smartphone, Palette, ShoppingCart, HeadphonesIcon, Mic } from 'lucide-react';
+import { Cpu, TrendingUp, ShoppingCart, Video, Smartphone, Brain } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const AboutSection = () => {
   const { t } = useLanguage();
 
   const specializations = [
-    { icon: Video, en: 'Professional Video Editing', ar: 'مونتاج الفيديوهات الاحترافي' },
-    { icon: Mic, en: 'Voice Over', ar: 'التعليق الصوتي' },
-    { icon: Smartphone, en: 'Social Media Setup & Management', ar: 'تأسيس وإدارة صفحات السوشيال ميديا' },
-    { icon: Palette, en: 'Content Design (Canva + AI)', ar: 'تصميم المحتوى باستخدام Canva + AI' },
-    { icon: ShoppingCart, en: 'E-commerce Store Setup (Easy Orders)', ar: 'إنشاء متاجر إلكترونية عبر Easy Orders' },
-    { icon: HeadphonesIcon, en: 'Customer Service Optimization', ar: 'تنظيم وتحسين خدمة العملاء' },
+    { icon: TrendingUp, en: 'SaaS Growth & Scaling', ar: 'نمو وتوسيع SaaS' },
+    { icon: Video, en: 'Video Editing & Content Creation', ar: 'مونتاج الفيديو وصناعة المحتوى' },
+    { icon: Smartphone, en: 'Social Media Management', ar: 'إدارة صفحات السوشيال ميديا' },
+    { icon: ShoppingCart, en: 'CRM Setup & Sales Systems', ar: 'إعداد CRM وأنظمة المبيعات' },
+    { icon: Brain, en: 'AI Consulting & Training', ar: 'استشارات وتدريب الذكاء الاصطناعي' },
+    { icon: Cpu, en: 'Digital Products & E-commerce', ar: 'المنتجات الرقمية والتجارة الإلكترونية' },
   ];
 
   return (
@@ -24,8 +24,8 @@ const AboutSection = () => {
           <div className="space-y-5 text-lg text-foreground/80 leading-relaxed mb-12 animate-fade-in">
             <p className="text-center">
               {t(
-                "I'm Ali Elhadi, specialized in:",
-                'أنا علي الهادي، متخصص في:'
+                "I'm Ali Elhadi, a Computer Science graduate studying business & marketing. I combine tech with business to build and grow SaaS products.",
+                'أنا مهندس علي الهادي، خريج حاسبات ومعلومات، وبدرس إدارة وتسويق. قررت أدمج بين المجال التقني والبيزنس، وبدأت رحلتي في SaaS من زاوية الصناعة + التسويق + المبيعات.'
               )}
             </p>
           </div>
@@ -42,15 +42,6 @@ const AboutSection = () => {
                 <span className="text-sm font-medium">{t(item.en, item.ar)}</span>
               </div>
             ))}
-          </div>
-
-          <div className="space-y-5 text-lg text-foreground/80 leading-relaxed animate-fade-in">
-            <p className="text-center">
-              {t(
-                'I work with business owners who want to build an organized, clear, and scalable digital presence — not just random activity on the internet.',
-                'أعمل مع أصحاب المشاريع الذين يريدون بناء حضور رقمي منظم، واضح، وقابل للتطوير — وليس مجرد نشاط عشوائي على الإنترنت.'
-              )}
-            </p>
           </div>
         </div>
       </div>

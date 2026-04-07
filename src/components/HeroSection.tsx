@@ -1,6 +1,6 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroProfile from '@/assets/mohandes-business-profile.png';
+import heroProfile from '@/assets/ali-profile.png';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-slide-in-left">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
-              {t('Video Editor & Social Media Manager', 'مونتير ومؤسس صفحات سوشيال ميديا')}
+              {t('SaaS Growth | Video Editor | Social Media Management', 'نمو SaaS | مونتير فيديو | إدارة سوشيال ميديا')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -24,17 +24,10 @@ const HeroSection = () => {
               <span className="text-3xl md:text-4xl ml-3">🇵🇸</span>
             </h1>
             
-            <p className="text-base text-muted-foreground/80">
-              {t(
-                'Muslim | Video Editor & Social Media Manager | Founder of Mohandes Business Channel',
-                'مسلم | مونتير ومؤسس صفحات سوشيال ميديا | صاحب قناة مهندس بيزنس'
-              )}
-            </p>
-            
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed font-medium">
               {t(
-                'I help doctors, educators, and business owners build and manage their digital presence professionally — from idea to execution with a clear and well-thought-out plan.',
-                'أساعد الدكاترة، المدرسين، وأصحاب المشاريع على تأسيس وإدارة تواجدهم الرقمي باحتراف — من الفكرة إلى التنفيذ بخطة واضحة ومدروسة.'
+                'Helping SaaS founders grow from 0 → 10 customers, then scale',
+                'أساعد مؤسسي SaaS على النمو من 0 → 10 عملاء، ثم التوسع'
               )}
             </p>
 
@@ -49,8 +42,8 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t('Show Me Your Project', 'اعرض عليّ مشروعك')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  {t('Contact on WhatsApp', 'تواصل عبر واتساب')}
                 </a>
               </Button>
               
@@ -60,13 +53,9 @@ const HeroSection = () => {
                 className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
                 asChild
               >
-                <a 
-                  href="https://wa.me/201111245487?text=مرحباً، أريد الاستفسار عن خدماتك"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  {t('WhatsApp Me', 'تواصل عبر واتساب')}
+                <a href="#projects">
+                  {t('View Content', 'عرض المحتوى')}
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
@@ -77,7 +66,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-20 animate-pulse-glow" />
               <img
                 src={heroProfile}
-                alt={t('Ali Elhadi - Mohandes Business', 'علي الهادي - مهندس بيزنس') as string}
+                alt={t('Ali Elhadi - SaaS Growth Specialist', 'علي الهادي - خبير نمو SaaS') as string}
                 className="relative rounded-full w-full h-full object-cover border-8 border-background shadow-2xl"
               />
             </div>
