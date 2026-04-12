@@ -6,7 +6,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
