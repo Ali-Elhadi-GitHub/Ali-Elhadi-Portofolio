@@ -1,16 +1,10 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import SkillsSection from '@/components/SkillsSection';
 import ServicesSection from '@/components/ServicesSection';
-import WhyChooseMe from '@/components/WhyChooseMe';
-import ProjectsSection from '@/components/ProjectsSection';
-import ReviewsSection from '@/components/ReviewsSection';
-import SocialLinksSection from '@/components/SocialLinksSection';
-import ChannelSection from '@/components/ChannelSection';
-import HowIWorkSection from '@/components/HowIWorkSection';
-import CTASection from '@/components/CTASection';
-import ContactSection from '@/components/ContactSection';
+import ProcessSection from '@/components/ProcessSection';
+import SelectedWorkSection from '@/components/SelectedWorkSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import HomeCTA from '@/components/HomeCTA';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -21,17 +15,11 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <AboutSection />
-        <SkillsSection />
         <ServicesSection />
-        <WhyChooseMe />
-        <ProjectsSection />
-        <ReviewsSection />
-        <SocialLinksSection />
-        <ChannelSection />
-        <HowIWorkSection />
-        <CTASection />
-        <ContactSection />
+        <ProcessSection />
+        <SelectedWorkSection />
+        <TestimonialsSection />
+        <HomeCTA />
       </main>
       <Footer />
       <WhatsAppFloat />

@@ -2,17 +2,17 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Languages } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
   const { language, toggleLanguage, t } = useLanguage();
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -23,68 +23,84 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { href: '#home', en: 'Home', ar: 'الرئيسية' },
-    { href: '#about', en: 'About', ar: 'عني' },
-    { href: '#services', en: 'Services', ar: 'الخدمات' },
-    { href: '#projects', en: 'Portfolio', ar: 'الأعمال' },
-    { href: '#reviews', en: 'Reviews', ar: 'التقييمات' },
-    { href: '#contact', en: 'Contact', ar: 'تواصل' },
+    { href: '/', en: 'Home', ar: 'الرئيسية' },
+    { href: '/cv', en: 'CV', ar: 'السيرة الذاتية' },
+    { href: '/portfolio', en: 'Portfolio', ar: 'الأعمال' },
+    { href: '/contact', en: 'Contact', ar: 'تواصل' },
   ];
+
+  const isActive = (href: string) => location.pathname === href;
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled || isMobileMenuOpen
+          ? 'py-2 bg-background/80 backdrop-blur-xl shadow-lg border-b border-border/50'
+          : 'py-4 bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-lg md:text-xl font-bold text-gradient-primary hover:opacity-80 transition-opacity">
+          <Link
+            to="/"
+            className={`font-bold text-gradient-primary transition-all duration-500 ${
+              isScrolled ? 'text-lg' : 'text-xl'
+            }`}
+          >
             {t('Ali Elhadi', 'علي الهادي')} 🇵🇸
-          </a>
+          </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-200 text-sm font-medium"
+                to={link.href}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  isActive(link.href)
+                    ? 'text-primary bg-primary/10'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                }`}
               >
                 {t(link.en, link.ar)}
-              </a>
+              </Link>
             ))}
-            <Button variant="ghost" size="icon" onClick={toggleLanguage} title={t('Switch to Arabic', 'التبديل إلى الإنجليزية')}>
-              <Languages className="h-5 w-5" />
+            <div className="w-px h-6 bg-border mx-2" />
+            <Button variant="ghost" size="icon" onClick={toggleLanguage} className="h-9 w-9">
+              <Languages className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="h-9 w-9">
+              {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
           </div>
 
-          <div className="md:hidden flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={toggleLanguage}>
-              <Languages className="h-5 w-5" />
+          <div className="md:hidden flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={toggleLanguage} className="h-9 w-9">
+              <Languages className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="h-9 w-9">
+              {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="h-9 w-9">
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3 animate-fade-in">
+          <div className="md:hidden mt-4 pb-4 space-y-1 animate-fade-in">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
+                className={`block px-4 py-3 rounded-lg transition-all duration-200 ${
+                  isActive(link.href)
+                    ? 'text-primary bg-primary/10 font-medium'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                }`}
               >
                 {t(link.en, link.ar)}
-              </a>
+              </Link>
             ))}
           </div>
         )}
