@@ -6,8 +6,9 @@ import './index.css';
 
 // Set initial direction to RTL for Arabic default
 if (typeof document !== 'undefined') {
-  document.documentElement.dir = 'rtl';
-  document.documentElement.lang = 'ar';
+  document.documentElement.dir = 'ltr';
+  document.documentElement.lang = 'en';
+  document.documentElement.classList.add('dark');
 }
 
 createRoot(document.getElementById('root')!).render(
