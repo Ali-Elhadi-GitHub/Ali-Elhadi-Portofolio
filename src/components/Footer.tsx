@@ -1,5 +1,6 @@
-import { MessageCircle, Facebook, Send, Music, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { MessageCircle, Facebook, Send, Music, Youtube } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -10,45 +11,61 @@ const Footer = () => {
     { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/bizeng.alielhadi' },
     { icon: Send, label: 'Telegram', href: 'https://t.me/bizeng_alielhadi' },
     { icon: Music, label: 'TikTok', href: 'https://tiktok.com/@bizeng_alielhadi' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/bizeng-alielhadi' },
-    { icon: Twitter, label: 'X', href: 'https://x.com/bizeng_ali' },
+  ];
+
+  const navLinks = [
+    { to: '/', en: 'Home', ar: 'الرئيسية' },
+    { to: '/cv', en: 'CV', ar: 'السيرة الذاتية' },
+    { to: '/portfolio', en: 'Portfolio', ar: 'الأعمال' },
+    { to: '/contact', en: 'Contact', ar: 'تواصل' },
   ];
   
   return (
-    <footer className="bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground py-12">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="text-center">
-            <h3 className="text-xl font-bold mb-2">
-              {t('Ali Elhadi', 'علي الهادي')} 🇵🇸
-            </h3>
-            <p className="text-sm opacity-80 mb-6">
-              {t(
-                'SaaS Growth & B2B SaaS Sales — Helping founders grow from 0 to 10 customers, then scale',
-                'نمو SaaS ومبيعات B2B — أساعد المؤسسين على النمو من 0 إلى 10 عملاء، ثم التوسع'
-              )}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-3 bg-primary-foreground/10 hover:bg-accent rounded-lg transition-all duration-300 hover:scale-110"
-                  title={social.label}
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-5 w-5 group-hover:text-accent-foreground transition-colors" />
-                </a>
-              ))}
+    <footer className="border-t border-border bg-card/50">
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <Link to="/" className="text-lg font-bold text-gradient-primary">
+                {t('Ali Elhadi', 'علي الهادي')} 🇵🇸
+              </Link>
+              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                {t('SaaS Growth Specialist helping founders scale.', 'خبير نمو SaaS يساعد المؤسسين على التوسع.')}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold mb-3">{t('Navigation', 'التنقل')}</p>
+              <div className="space-y-2">
+                {navLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {t(link.en, link.ar)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold mb-3">{t('Connect', 'تواصل')}</p>
+              <div className="flex gap-2">
+                {socialLinks.map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="border-t border-primary-foreground/20"></div>
-
-          <div className="text-center">
-            <p className="text-sm opacity-90">
+          <div className="border-t border-border pt-6 text-center">
+            <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} {t('Ali Elhadi', 'علي الهادي')} 🇵🇸 · {t('All rights reserved.', 'جميع الحقوق محفوظة.')}
             </p>
           </div>
